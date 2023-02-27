@@ -1,0 +1,119 @@
+Q: What is Janet Framework?
+A: The Janet Framework is a dynamic and expressive programming language that 
+emphasizes simplicity, speed, and correctness. It is designed to be a general-purpose 
+language that can be used for a wide range of tasks, including systems programming, 
+scripting, and web development.
+Janet is inspired by several other programming languages, including Lisp, Lua, and 
+Clojure. It features a simple, powerful syntax that makes it easy to read and write 
+code, and its lightweight design allows it to run efficiently on a wide range of 
+platforms.
+Some of the key features of Janet include:
+• Dynamic typing: Janet is dynamically typed, which means that variables can hold 
+  values of any type, and the type of a variable can change at runtime.
+' Lightweight concurrency: Janet has built-in support for lightweight coroutines, 
+  which can be used to write concurrent code in a simple and efficient manner.
+• Built-in data structures: Janet has a rich set of built-in data structures, including 
+  lists, maps, and sets, that make it easy to work with complex data.
+• Extensible: Janet has a powerful macro system that allows developers to extend the 
+  language with their own syntax and features.
+Overall, the Janet Framework is a flexible and powerful language that is well-suited for 
+a wide range of programming tasks.
+
+
+
+Q: Can you generate a sample ready-to-go project?
+A: Sure, I can generate a sample project using Janet Framework. Here is a simple "Hello 
+World" program in Janet that you can use as a starting point for your own project:
+Janet                                                               
+  # main.janet 
+  (import :std)
+  
+  (defn -main []
+    (print "Hello, world!\n"))
+
+To run this program, save it to a file called "main.janet" and then run the following 
+command in your terminal:
+
+ CSS                                                                
+  janet main
+
+This will run the "-main" function defined in the file and output the "Hello, world!" 
+message to the console.
+
+Note that you will need to have Janet Framework installed on your system in order to 
+run this program. You can download Janet Framework from the official website at 
+https://janet-lang.org/.
+
+
+
+Q: Is it possible to connect to a mongoldb with connection string?
+A: Yes, it is possible to connect to a MongoDB database using a connection string in Eli!
+Janet Framework. Janet has a MongoDB driver called ' mongo. janet' that you can 
+use to interact with MongoDB databases. Here is an example of how to connect to a 
+MongoDB database using a connection string:
+ janet                                                             
+  (import mongo)
+  (def client (mongo/connect "mongodb://username:password@host:port/dbname
+
+In this example, 'mongo/connect' function takes a connection string as an 
+argument, which includes the username, password, host, port, and database name.
+Once you have established a connection to the MongoDB database, you can use the 
+'mongo' namespace functions to perform operations on the database. For example, 
+to retrieve all the documents from a collection, you can use the
+'mongo/collection' and 'mongo/find' functions:
+
+Once you have established a connection to the MongoDB database, you can use the 
+'mongo' namespace functions to perform operations on the database. For example, 
+to retrieve all the documents from a collection, you can use the 
+'mongo/collection' and 'mongo/find' functions:
+  janet                              
+  (import mongo)
+  (def client (mongo/connect "mongodb://username:password@host:port/dbname 
+  (def coil (mongo/collection client "collection_name"))
+  (def documents (mongo/find coil {}))
+  (print documents)
+
+In this example, we first connect to the MongoDB database using the 
+'mongo/connect' function. Then, we retrieve a reference to a collection using the 
+'mongo/collection' function. Finally, we use the 'mongo/find' function to 
+retrieve all the documents from the collection, and print them to the console using the 'print' function.
+'print' function.
+Note that you will need to have the MongoDB driver installed in your Janet 
+environment in order to use the 'mongo' namespace functions. You can install the 
+driver using the ' jpm' package manager:
+                                     
+  jpm install mongo
+  
+  
+
+Q: can you generate a code that lists the collections in db?
+A: Sure, here's an example code snippet that lists all the collections in a MongoDB 
+database using the Janet mongo. janet' driver:
+Janet                           
+ (import mongo)
+
+ (defn list-collections [client] 
+   (let [db (mongo/get-db client)] 
+    (mongo/list-collections db)))
+
+ (def client (mongo/connect "mongodb://username:password@host:port/d, 
+
+ (def collections (list-collections client))
+
+ (print collections)
+
+In this example, we define a function called 'list-collections' that takes a 
+MongoDB client as an argument. The function uses the mongo/get-db' function 
+to retrieve a reference to the database, and then calls the 'mongo/list- 
+collections' function to retrieve a list of all the collections in the database.
+We then connect to the MongoDB database using the 'mongo/connect' 
+function, and pass the resulting client object to the 'list-collections' 
+function. Finally, we print the list of collections to the console using the 'print' 
+function.
+Note that you will need to have the MongoDB driver installed in your Janet 
+environment in order to use the mongo' namespace functions. You can install the 
+driver using the jpm' package manager:
+                                 
+ jpm install mongo
+
+
